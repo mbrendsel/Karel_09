@@ -16,8 +16,30 @@ public class Lab09 {
 		 String map = JOptionPane.showInputDialog("Which map?");
 		 Display.openWorld("maps/"+map+".map");
 		 Display.setSize(10, 10);
-		 Athlete athena = new Athlete(1, 1, Display.EAST, 0);
-		 //TODO write a combination of definite and indefinite loops that will cause athena
-		 // to pick up each pile of beepers and deposit them one square to the right.
-	 }
- }
+       Display.setSpeed(5);
+		 Athlete monica = new Athlete(1, 1, Display.EAST, 0);
+        
+       monica.move();
+       monica.move();
+       monica.move();
+       monica.move();
+       monica.move();
+       monica.move();
+       
+       for (int k = 1; k <= 7; k++) {
+       int count = 0;
+       while (monica.nextToABeeper()){
+       monica.pickBeeper();
+       count++;}
+       monica.move();
+       for (int g = 1; g <= count; count--){
+       monica.putBeeper();}
+       monica.turnAround();
+       if (monica.frontIsClear()) {
+       monica.move();}
+       if (monica.frontIsClear()) {
+       monica.move();}
+       monica.turnAround();}
+       monica.turnAround();   
+  }
+}
